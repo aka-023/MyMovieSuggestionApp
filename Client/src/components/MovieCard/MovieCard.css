@@ -1,0 +1,112 @@
+.movie-card {
+    width: 400px;
+    height: 12rem;
+    display: flex;
+    border: 2px solid #ffcc00;
+    /* border: 2px solid palevioletred; */
+    border-radius: 1.5rem;
+    overflow: visible;
+    margin: 20px;
+    background-color: #cbc4c4;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.bin-icon {
+    position: absolute;
+    top: -12px;
+    right: -5px;
+    padding: 3px;
+    cursor: pointer;
+    color: black;
+    padding: 2px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.image img {
+    height: 100%;
+    width: 8rem;
+    object-fit: cover;
+    border-radius: 1.5rem 0 0 1.5rem;
+}
+
+.details {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    /* color: rgb(221, 34, 96); */
+    /* color: #e1b504; */
+    color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rating, .release-date {
+    font-size: 0.9rem;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.release-date {
+    font-style: italic;
+}
+.genre{
+    font-size: 0.9rem;
+    color: #666;
+    white-space: nowrap;
+    display: flex;
+    max-width: 250px;
+    overflow: hidden;
+}
+
+.genre-ele {
+    display: inline-block;
+    background-color: #e1b504;
+    /* color: white; */
+    color: black;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    margin-right: 0.3rem;
+    margin-bottom: 0.2rem;
+    white-space: nowrap;
+}
+
+.cont{
+    display: flex;
+    gap: 2rem;
+}
+
+.cont button{
+    padding: none;
+    border: none;
+    background-color: #cbc4c4;
+}
+
+.star-icon {
+    color: gray;
+    cursor: pointer;
+}
+
+.favorite {
+    color: goldenrod;
+}
+

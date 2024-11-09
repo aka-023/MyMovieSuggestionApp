@@ -1,0 +1,51 @@
+.imgeslider {
+    width: 1300px;
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth; 
+}
+
+.imgeslider div {
+    /* width: 55%;*/
+    display: grid;
+    grid-template-columns: auto auto auto; 
+    grid-gap: 10px;
+    padding: 10px;
+    flex: none; 
+}
+
+.imgeslider div img {
+    transition: transform 0.5s;
+}
+
+.imgeslider_img{
+    width: 300px;
+    height: 250px;
+    margin: 1rem 0.8rem;
+    border: 7px solid white;
+    outline: 2px solid grey;
+}
+
+.imgeslider div img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    border: 5px solid #ffcc00;
+    /* border: 5px solid palevioletred; */
+    border-radius: 10px;
+    outline: none;
+}
+
+.imgeslider::-webkit-scrollbar {
+    display: none;
+}
+
+.imgeslider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% auto;
+}
+
+.back_btn, .for_btn {
+    cursor: pointer;
+}

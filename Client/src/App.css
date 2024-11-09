@@ -1,0 +1,21 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.movielist, .favourites-cont{
+    background-color: black;
+    min-height: 90vh;
+    overflow-x: hidden;
+}
+
+.movielist h2, .favourites-cont h2{
+    padding: 2rem;
+    color: #ffcc00;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}

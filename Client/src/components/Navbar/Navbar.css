@@ -1,0 +1,122 @@
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.title span {
+    color: #ffcc00;
+}
+
+.nav-ele {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-ele div {
+    cursor: pointer;
+}
+
+.nav-ele div a {
+    text-decoration: none;
+    color: aliceblue;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-ele div a:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+/* Profile Button Styling */
+.profile-button {
+    background-color: transparent;
+    color: #ffcc00;
+    border: 2px solid #ffcc00;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.profile-button:hover {
+    background-color: #ffcc00;
+    color: #333;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    background-color: #333;
+    border: 1px solid #ffcc00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.dropdown a,
+.dropdown button {
+    display: block;
+    padding: 10px 15px;
+    color: #ffcc00;
+    text-decoration: none;
+    background-color: #333;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown a:hover,
+.dropdown button:hover {
+    background-color: #444;
+}
+
+/* Login Button Styling */
+.login a {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.login a:hover {
+    background-color: #e6b800;
+    color: #fff;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-ele {
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px 0;
+    }
+
+    .profile {
+        margin-top: 10px;
+    }
+}
