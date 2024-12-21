@@ -1,4 +1,4 @@
-import defaultprofile from '../assets/defaultprofile.webp'
+import defaultprofile from '../assets/defaultprofile.jpg'
 
 const CastCard = ({cast}) => {
     let image = defaultprofile;

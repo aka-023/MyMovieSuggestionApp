@@ -11,7 +11,7 @@ const MovieDetails = () => {
   const {id} = useParams();
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [castList, setCastList] = useState(null);
+  const [topLeads, setTopLeads] = useState(null);
   const [imageList, setImageList] = useState(null);
 
 
@@ -24,7 +24,9 @@ const MovieDetails = () => {
 
         const url2 = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${import.meta.env.VITE_MOVIE_API}`
         const movieCast = await axios.get(url2);
-        setCastList(movieCast.data.cast);
+
+        const topLeadsArr = movieCast.data.cast.sort((a, b) => a.order - b.order).slice(0, 6); 
+        setTopLeads(topLeadsArr);
 
         const url3 = `https://api.themoviedb.org/3/movie/${id}/images?api_key=${import.meta.env.VITE_MOVIE_API}`
         const images = await axios.get(url3);
@@ -80,7 +82,7 @@ const MovieDetails = () => {
       <div className="top-cast">
         <h3>Top Cast</h3>
         <div className="cast-list">
-          {castList && castList.splice(0,6).map((cast, index) => (
+          {topLeads && topLeads.map((cast, index) => (
                 <div className='cast-ele' key={index}><CastCard cast={cast}/></div>
           ))}
         </div>

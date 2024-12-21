@@ -68,9 +68,9 @@ const Navbar = () => {
                 <div><Link to={`/movie/popular`}>Popular</Link></div>
                 <div><Link to={`/movie/top_rated`}>Top Rated</Link></div>   
                 <div><Link to={`/movie/upcoming`}>Upcoming</Link></div>
+                {isAuthenticated && <div><Link to={'/favourites'}>Favourites</Link></div>}
                 <div><Link to={'/about'}>About Us</Link></div>
                 <div><Link to={'/contact'}>Contact Us</Link></div>
-                {isAuthenticated && <div><Link to={'/favourites'}>Favourites</Link></div>}
             </div>
 
             {isAuthenticated ? 
