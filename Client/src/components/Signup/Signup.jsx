@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Link, redirect, useNavigate} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import { Form } from 'react-router-dom';
 import './Signup.css';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
-  const [message, setMessage] = useState('');
-  const [isSuccess, setIsSuccess] = useState(null);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -17,15 +16,13 @@ const Signup = () => {
     const response = await handleSignup(user);
     
     if (response.success) {
-      setIsSuccess(true);
-      setMessage(response.message);
-
+      toast.success(response.message);
       setTimeout(() => {
       navigate('/');
       }, 1500);
-    } else {
-      setIsSuccess(false);
-      setMessage(response.message);
+    } 
+    else {
+      toast.error(response.message);
     }
   };
 
@@ -48,12 +45,6 @@ const Signup = () => {
         />
         <button type="submit">Sign Up</button>
       </Form>
-
-      {message && (
-        <div className={isSuccess ? 'success-message' : 'error-message'}>
-          {message}
-        </div>
-      )}
 
       <div>Already have an account? <Link to={'/login'}> Login here</Link></div>
     </div>

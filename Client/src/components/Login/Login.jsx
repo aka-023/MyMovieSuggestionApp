@@ -3,10 +3,10 @@ import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { Form } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
+import { toast } from 'react-toastify';
+
 
 const Login = () => {
-  const [message, setMessage] = useState('');
-  const [isSuccess, setIsSuccess] = useState(null);
   const navigate = useNavigate();
   const {setIsAuthenticated} = useContext(AuthContext);
 
@@ -47,14 +47,10 @@ const Login = () => {
     
     if (response.success) {
       setIsAuthenticated(true);
-      setIsSuccess(true);
-      setMessage(response.message);
-      // console.log(document.cookie);
-      
+      toast.success(response.message);
       navigate('/');
     } else {
-      setIsSuccess(false);
-      setMessage(response.message);
+      toast.error(response.message);
     }
   };
 
@@ -76,12 +72,6 @@ const Login = () => {
         />
         <button type="submit">Login</button>
       </Form>
-
-      {message && (
-        <div className={isSuccess ? 'success-message' : 'error-message'}>
-          {message}
-        </div>
-      )}
 
       <div>Don't have an account?<Link to={'/signup'} > Sign Up</Link></div>
       <div className="forget-pass"><Link to={'/forget-pass'}>Forget Password?</Link></div>

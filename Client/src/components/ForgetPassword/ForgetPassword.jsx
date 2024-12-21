@@ -1,11 +1,10 @@
 import { useRef, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import './ForgetPassword.css';
+import { toast } from "react-toastify";
 
 const ForgetPassword = () => {
     const emailEle = useRef();
-    const [message, setMessage] = useState(null);
-    const [success, setSuccess] = useState(false);
     const navigate = useNavigate();
 
     const handleSendForgetPassCode = async() => {
@@ -22,13 +21,13 @@ const ForgetPassword = () => {
 
             const result = await response.json();
 
-            setMessage(result.message);
-            setSuccess(response.ok);
+            if(response.ok){
+                toast.success(result.message);
+            } else{
+                toast.error(result.message);
+            }
             
             setTimeout(() => {
-                setMessage(null);
-                setSuccess(false);
-
                 if (response.ok) {
                     navigate('/reset-pass');
                 }
@@ -52,12 +51,6 @@ const ForgetPassword = () => {
             <button onClick={handleSendForgetPassCode} className="forget-password-button">
                 Send Code
             </button>
-
-            {message && (
-                <div className={success ? 'success-message' : 'error-message'}>
-                    {message}
-                </div>
-            )}
         </div>
     )
 }

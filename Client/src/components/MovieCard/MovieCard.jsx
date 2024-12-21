@@ -3,6 +3,7 @@ import './MovieCard.css';
 import { FaStar } from "react-icons/fa";
 import { IoTrashBin } from "react-icons/io5";
 import { useState } from 'react';
+import {toast} from 'react-toastify';
 
 const MovieCard = ( {movie, isFav}) => {
     const navigate = useNavigate();
@@ -26,13 +27,13 @@ const MovieCard = ( {movie, isFav}) => {
             });
             
             if(response.ok){
-                alert('movie added to favourites!!');
+                toast.success('movie added to favourites!!');
                 setIsFavorite(true);
             }
             const result = await response.json();
             // console.log(result);
             if(result.message === 'UnAuthorized'){
-                alert('Please login to Add movie to favourites!!');
+                toast.error('Please login to Add movie to favourites!!');
             }
         }
         catch(err){
@@ -52,9 +53,10 @@ const MovieCard = ( {movie, isFav}) => {
             });
 
             const result = await response.json();
-            console.log(result);
+            // console.log(result);
 
-            if(response.ok){              
+            if(response.ok){      
+                toast.success('movie removed from favourites');        
                 setIsFavorite(false);
             }
         }

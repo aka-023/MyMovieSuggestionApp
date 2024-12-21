@@ -15,6 +15,8 @@ import UpdateProfile from './components/UpdateProfile/UpdateProfile.jsx'
 import ForgetPassword from './components/ForgetPassword/ForgetPassword.jsx'
 import ResetPassword from './components/ResetPassword/ResetPassword.jsx'
 import Favourites from './pages/Favourites/Favourites.jsx'
+import { ToastContainer } from 'react-toastify';
+
 
 const router = createBrowserRouter([
   {
@@ -72,5 +74,8 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router}/>
+    <ToastContainer
+    theme="colored"
+    autoClose={3000}/>
   </StrictMode>,
 )

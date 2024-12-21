@@ -4,7 +4,7 @@ const users = require('../models/userModel');
 const mongoose = require('mongoose');
 const {hash, compare} = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const transport = require('../middlewares/sendmail')
+const transport = require('../middlewares/sendmail');
 
 exports.signup = async(req, res) => {
     const {email, password} = req.body;

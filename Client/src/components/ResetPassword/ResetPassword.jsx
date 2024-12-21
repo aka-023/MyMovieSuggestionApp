@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { Form, useNavigate } from "react-router-dom";
 import './ResetPassword.css';
+import { toast } from "react-toastify";
 
 const ResetPassword = () => {
-    const [message, setMessage] = useState(null);
-    const [isSuccess, setIsSuccess] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = async(event) => {
@@ -24,9 +23,13 @@ const ResetPassword = () => {
             })
 
             const result = await response.json();
-            setMessage(result.message);
-            setIsSuccess(response.ok);
-
+            
+            if(response.ok){
+                toast.success(result.message);
+            } else{
+                toast.error(result.message);
+            }
+                        
             setTimeout(() => {
                 if(response.ok){
                     navigate('/login');
@@ -64,12 +67,6 @@ const ResetPassword = () => {
                 />
                 <button type="submit" className="reset-password-button">Reset Password</button>
             </Form>
-
-            {message && (
-                <div className={isSuccess ? 'success-message' : 'error-message'}>
-                    {message}
-                </div>
-            )}
         </div>
     )
 }

@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { Form } from 'react-router-dom';
 import './UpdateProfile.css'
+import { toast } from 'react-toastify';
 
 const UpdateProfile = () => {
-  const [message, setMessage] = useState('');
-  const [isSuccess, setIsSuccess] = useState(null);
-
   const handlePasswordChange = async(event) => {
     event.preventDefault();
 
@@ -24,21 +22,18 @@ const UpdateProfile = () => {
       });
   
       const result = await response.json();
-      console.log(response);
+      // console.log(response);
       
-      if (response.ok){
-        setIsSuccess(true);
-        setMessage(result.message);
+      if(response.ok){
+        toast.success(result.message);
+      } else{
+        toast.error(result.message);
       }
-      else{
-        setIsSuccess(false);
-        setMessage(result.message);
-      }
+    
     }
     catch (error) {
       console.error('Error during changing password:', error);
-      setIsSuccess(false);
-      setMessage('An unexpected error occurred.');
+      toast.error(result.message);
     }
   }
 
@@ -53,12 +48,6 @@ const UpdateProfile = () => {
         <button type='submit'>Change Password</button>
         </Form>
       </div>
-
-      {message && (
-        <div className={isSuccess ? 'success-message' : 'error-message'}>
-          {message}
-        </div>
-      )}
 
     </div>
   );

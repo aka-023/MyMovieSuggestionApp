@@ -5,7 +5,7 @@ exports.identifier = (req, res, next) => {
     if(req.headers.client === 'not-browser'){
         token = req.headers.authorization;
     }
-    else{
+    else{ 
         token = req.cookies['Authorization'];
     }
 
