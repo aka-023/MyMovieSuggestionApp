@@ -26,10 +26,12 @@
     padding: 0;
 }
 
-.footer-section ul li {
+.footer-section ul li a{
     margin: 5px 0;
     cursor: pointer;
     transition: transform 0.5s;
+    color: whitesmoke;
+    text-decoration: none;
 }
 
 .footer-section ul li:hover {

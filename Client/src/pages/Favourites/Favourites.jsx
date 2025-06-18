@@ -46,11 +46,11 @@ const Favourites = () => {
         };
 
         fetchFavourites();
-    }, []);
+    }, [favourites]);
 
     return (
         <div className="favourites-cont">
-            <h2>Your Favourites</h2>
+            <h2>My Favourites</h2>
             {error ? (
                 <div className="error-message">{error}</div>
             ) : favourites.length > 0 ? (

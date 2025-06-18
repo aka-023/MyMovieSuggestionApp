@@ -71,11 +71,7 @@ const Home = () => {
                     </Link>
                 ))}
             </Carousel>
-
-            {/* {popularMovies.map((movie, i) => (
-                <MovieCard movie={movie} key={i}/>
-            ))} */}
-
+            
             <Search/>
             <Footer/>
         </div>

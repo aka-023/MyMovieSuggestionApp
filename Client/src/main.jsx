@@ -6,7 +6,6 @@ import App from './App.jsx'
 import './index.css'
 import MovieDetails from './pages/MovieDetails/MovieDetails.jsx';
 import MovieList from './components/MovieList.jsx';
-import About from './pages/About/About.jsx'
 import Contact from './pages/Contact/Contact.jsx'
 import Home from './pages/Home/Home.jsx';
 import Login from './components/Login/Login.jsx'
@@ -30,10 +29,6 @@ const router = createBrowserRouter([
       {
         path:"details/:id",
         element:<MovieDetails/>
-      },
-      {
-        path:"about",
-        element:<About/>
       },
       {
         path:"contact",

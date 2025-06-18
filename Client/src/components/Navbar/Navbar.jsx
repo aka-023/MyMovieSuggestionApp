@@ -5,12 +5,7 @@ import { AuthContext } from '../../context/AuthContext';
 
 const Navbar = () => {
     const {isAuthenticated, setIsAuthenticated} = useContext(AuthContext);
-    const [isDropdownOpen, setDropdownOpen] = useState(false);
     const navigate = useNavigate();
-
-    const toggleDropDown = () => {
-        setDropdownOpen((prev) => !(prev));
-    }
 
     const checkAuthentication = async () => {
         const response = await fetch('http://localhost:3000/checkauth', {
@@ -45,7 +40,6 @@ const Navbar = () => {
 
             if (response.ok) {
                 setIsAuthenticated(false);
-                setDropdownOpen(false);
                 navigate('/');
                 return;
               } 
@@ -69,21 +63,12 @@ const Navbar = () => {
                 <div><Link to={`/movie/top_rated`}>Top Rated</Link></div>   
                 <div><Link to={`/movie/upcoming`}>Upcoming</Link></div>
                 {isAuthenticated && <div><Link to={'/favourites'}>Favourites</Link></div>}
-                <div><Link to={'/about'}>About Us</Link></div>
                 <div><Link to={'/contact'}>Contact Us</Link></div>
             </div>
 
             {isAuthenticated ? 
-            (<div>
-                <button onClick={toggleDropDown} className="profile-button" >Profile</button>
-                {isDropdownOpen && (
-                  <div className="dropdown">
-                    <Link to="/update-profile">Update Profile</Link>
-                    <button onClick={handleLogout}>Logout</button>
-                  </div>
-                )}
-              </div>) : 
-            (<div className="login"><Link to={'/login'}>Login</Link></div>)} 
+            (<div><button className='auth-button' onClick={handleLogout}>Logout</button></div>) : 
+            (<div className="auth-button"><Link to={'/login'}>Login</Link></div>)} 
         </div>
     )
 }

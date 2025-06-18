@@ -26,14 +26,16 @@ const MovieCard = ( {movie, isFav}) => {
                 body: JSON.stringify({movieId})
             });
             
+            const result = await response.json();
             if(response.ok){
                 toast.success('movie added to favourites!!');
                 setIsFavorite(true);
             }
-            const result = await response.json();
-            // console.log(result);
-            if(result.message === 'UnAuthorized'){
+            else if(result.message === 'UnAuthorized'){
                 toast.error('Please login to Add movie to favourites!!');
+            }
+            else{
+                toast.error('Movie already in favourites!!');
             }
         }
         catch(err){
@@ -56,8 +58,8 @@ const MovieCard = ( {movie, isFav}) => {
             // console.log(result);
 
             if(response.ok){      
-                toast.success('movie removed from favourites');        
                 setIsFavorite(false);
+                toast.success('movie removed from favourites');        
             }
         }
         catch(err){

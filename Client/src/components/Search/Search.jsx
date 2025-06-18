@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import './Search.css';
 import { FaSearch } from 'react-icons/fa';  
 import MovieCard from '../MovieCard/MovieCard';
@@ -57,7 +57,7 @@ const Search = () => {
         <div className="search_container">
             <h2 className="search-title">Search for Your Favorite Movies</h2>        
             <div className="search-ele">
-                <input type="text" ref={nameElement} placeholder="Search your movie here..." className="search-input" />
+                <input type="text" ref={nameElement} placeholder="Search your movie here..." className="search-input"/>
                 <button className="search-btn" onClick={handleSearch}>
                     <FaSearch />
                 </button>

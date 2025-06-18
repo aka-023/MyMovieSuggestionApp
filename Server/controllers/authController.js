@@ -113,7 +113,7 @@ exports.sendForgotPasswordCode = async(req, res) => {
         let info = await transport.sendMail({
             from: process.env.NODE_CODE_SENDING_EMAIL_ADD,
             to:user.email,
-            subject:"Forgot Password CODE",
+            subject:"MovieDB Forget Password Reset Code",
             html: '<h1>'+ codeValue +'</h1>'
         })
 

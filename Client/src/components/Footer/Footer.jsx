@@ -1,5 +1,6 @@
 import './Footer.css'
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -12,10 +13,9 @@ const Footer = () => {
                 <div className="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li>Home</li>
-                        <li>Your Bucket</li>
-                        <li>About Us</li>
-                        <li>Contact Us</li>
+                        <li><Link to={'/'}>Home</Link></li>
+                        <li><Link to={'/favourites'}>Your Bucket</Link></li>
+                        <li><Link to={'/contact'}>Contact Us</Link></li>
                     </ul>
                 </div>
                 <div className="footer-section">
