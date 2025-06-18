@@ -16,6 +16,8 @@ A web application that suggests movies based on user preferences. Users can sear
 - **Database**: MongoDB (to store user favorites)
 - **API**: [The Movie Database (TMDB)](https://www.themoviedb.org/)
 
+---
+
 ## Installation
 
 1. **Clone the repository**:
@@ -29,6 +31,8 @@ A web application that suggests movies based on user preferences. Users can sear
    ```bash
    cd MyMovieSuggestionApp
    ```
+
+---
 
 ### Client Setup
 
@@ -50,6 +54,7 @@ A web application that suggests movies based on user preferences. Users can sear
    npm install
    npm run dev
    ```
+---
 
 ### Server Setup
 
@@ -83,3 +88,19 @@ Once both client and server are running, open your browser and navigate to:
 ```plaintext
 http://localhost:5173
 ```
+
+---
+
+### ScreenShots
+
+![Landing Page](https://github.com/user-attachments/assets/d789a80f-bc30-479a-a42f-53a0a7519369)
+
+
+![Movie List](https://github.com/user-attachments/assets/923ad084-adb0-43d3-a2e3-b81ce8bb50ca)
+
+
+![Favourite Movies](https://github.com/user-attachments/assets/fd01ee36-3914-4aaf-bb56-796b6b24ed85)
+
+---
+
+thank you for your time ❤️
