@@ -8,16 +8,17 @@ const authRouter = require('./routers/authRouter');
 const favRouter = require('./routers/favouriteRouter');
 const {identifier} = require('./middlewares/verify');
 
-const app = express();
 
-app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+const app = express();
 
 app.use(cors({
     origin:'http://localhost:5173',
     credentials:true,
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE']
 }));
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 
 app.use(cookieParser());
 

@@ -13,7 +13,7 @@ const ResetPassword = () => {
         const data = Object.fromEntries(formData);
 
         try {
-            const response = await fetch('http://localhost:3000/auth/verify-fp-code', {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/auth/verify-fp-code`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',

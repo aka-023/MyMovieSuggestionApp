@@ -10,7 +10,7 @@ const ForgetPassword = () => {
     const handleSendForgetPassCode = async() => {
         const email = emailEle.current.value;
         try {
-            const response = await fetch('http://localhost:3000/auth/send-fp-code', {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/auth/send-fp-code`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'

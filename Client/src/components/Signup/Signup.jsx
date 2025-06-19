@@ -53,7 +53,7 @@ const Signup = () => {
 
 const handleSignup = async (user) => {
   try {
-    const response = await fetch('http://localhost:3000/auth/signup', {
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/auth/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

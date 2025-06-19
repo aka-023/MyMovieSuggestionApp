@@ -10,7 +10,7 @@ const Favourites = () => {
     useEffect(() => {
         const fetchFavourites = async () => {
             try {
-                const response = await fetch('http://localhost:3000/favourites/getall', {
+                const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/favourites/getall`, {
                     method: "GET",
                     headers: {
                         'Content-Type': 'application/json'

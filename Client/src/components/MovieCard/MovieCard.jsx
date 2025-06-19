@@ -17,7 +17,7 @@ const MovieCard = ( {movie, isFav}) => {
 
     const handleFavouriteClick = async() => {
         try{
-            const response = await fetch('http://localhost:3000/favourites/add',{
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/favourites/add`,{
                 method:"POST",
                 headers:{
                     'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ const MovieCard = ( {movie, isFav}) => {
 
     const handleRemoveFromFavorites = async() => {
         try{
-            const response = await fetch('http://localhost:3000/favourites/delete',{
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/favourites/delete`,{
                 method: 'DELETE',
                 headers:{
                     'Content-Type': 'application/json'

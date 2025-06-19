@@ -8,7 +8,7 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const checkAuthentication = async () => {
-        const response = await fetch('http://localhost:3000/checkauth', {
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/checkauth`, {
             method: 'GET',
             credentials: 'include',
         });
@@ -29,7 +29,7 @@ const Navbar = () => {
 
     const handleLogout = async() => {
         try{
-            const response = await fetch('http://localhost:3000/auth/logout', {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/auth/logout`, {
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json',

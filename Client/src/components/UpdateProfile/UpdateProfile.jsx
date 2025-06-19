@@ -12,7 +12,7 @@ const UpdateProfile = () => {
     console.log(data);
 
     try{
-      const response = await fetch('http://localhost:3000/auth/change-password', {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/auth/change-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
