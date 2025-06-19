@@ -57,7 +57,8 @@ exports.login = async(req, res) => {
         }, process.env.SECRET_KEY,
         {expiresIn : '8h'});
 
-        res.cookie('Authorization', 'Bearer ' + token , {expires: new Date(Date.now() + 8 * 3600000), sameSite:'None'});
+        res.cookie('Authorization', 'Bearer ' + token , {expires: new Date(Date.now() + 8 * 3600000), httpOnly: true,
+                    secure: true, sameSite:'None'});
         return res.status(200).json({success: true, token, message: "You have been logged in successfully"});
     }
     catch(err){
