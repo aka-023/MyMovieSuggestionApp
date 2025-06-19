@@ -12,7 +12,7 @@ const {identifier} = require('./middlewares/verify');
 const app = express();
 
 app.use(cors({
-    origin:'http://localhost:5173',
+    origin:'https://my-movie-suggestion-app.vercel.app',
     credentials:true,
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE']
 }));
